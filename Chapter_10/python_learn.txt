@@ -1,0 +1,7 @@
+Python:
+Learned For loops
+Inheritance
+Classes
+Objects
+File Reading
+And stuff to come!
