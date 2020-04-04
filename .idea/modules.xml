@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/python_crash_course.iml" filepath="$PROJECT_DIR$/.idea/python_crash_course.iml" />
+      <module fileurl="file://$USER_HOME$/PycharmProjects/ScrapyTurtorial/quoteturtorial/quoteturtorial/.idea/quoteturtorial.iml" filepath="$USER_HOME$/PycharmProjects/ScrapyTurtorial/quoteturtorial/quoteturtorial/.idea/quoteturtorial.iml" />
     </modules>
   </component>
 </project>

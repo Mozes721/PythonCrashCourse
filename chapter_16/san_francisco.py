@@ -5,22 +5,32 @@ from matplotlib import pyplot as plt
 
 # Get dates and rainfall data from data file.
 #  Rainfall data is in column 19.
-filename = 'sitka_weather_07-2014.csv'
+filename = '/Users/richard/Desktop/PythonCrashCourse/chapter_16/sitka_weather_07-2014.csv'
 with open(filename) as f:
+    #read the csv file
     reader = csv.reader(f)
+    #get the header row
     header_row = next(reader)
 
+    #store dates, rainfalls, totals in an array
     dates, rainfalls, totals = [], [], []
+    #make a for loop through the file
     for row in reader:
         try:
+            #get the date of time from the vaules
             current_date = datetime.strptime(row[0], "%Y-%m-%d")
+            #rainfall from apropriate row
             rainfall = float(row[19])
         except ValueError:
+            #except the data is missing
             print(current_date, 'missing data')
         else:
+            #append to dates the current date
             dates.append(current_date)
+            #then rainfall
             rainfalls.append(rainfall)
             if totals:
+                #if totals then append them as well plus rainfualls
                 totals.append(totals[-1] + rainfall)
             else:
                 totals.append(rainfall)

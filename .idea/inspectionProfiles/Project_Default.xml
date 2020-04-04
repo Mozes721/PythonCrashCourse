@@ -5,6 +5,8 @@
       <option name="ignoredIdentifiers">
         <list>
           <option value="cars" />
+          <option value="chapter12.alien_invasion.ship" />
+          <option value="chapter_18.learning_logs.admin.learning_logs" />
         </list>
       </option>
     </inspection_tool>
