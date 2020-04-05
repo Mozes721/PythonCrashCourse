@@ -6,7 +6,7 @@ from pygame.sprite import Sprite
 from catcher import Catcher
 from random import randint
 from os import path
-
+import shelve
 
 
 
@@ -78,24 +78,26 @@ def update_baller(ai_settings, stats, sb, screen, catcher, baller):
 
     #set the collision possibility
     collision = pygame.sprite.groupcollide(baller, catcher, True, False)
+    cheked = 0
     if collision:
+        cheked += 1
         for baller in collision.values():
             stats.score += ai_settings.catch_points * len(baller)
             sb.prep_score()
             chech_high_score(stats, sb)
+            if cheked == 3:
+                ai_settings.increase_speed()
+                stats.level +=1
+                sb.prep_level()
+                cheked = 0
 
 
 def chech_high_score(stats, sb):
-    #check to see if theres a new high score
     if stats.score > stats.high_score:
         stats.high_score = stats.score
 
 
 def update_screen(ai_settings, screen,stats, sb, baller, catcher):
-    high_score_text = open('high_score.txt', 'r+')
-    high_score = str(high_score_text)
-    high_score_text.write(high_score)
-    stats.high_score_file.close()
     sb.prep_high_score()
 
     screen.fill(ai_settings.bg_color)

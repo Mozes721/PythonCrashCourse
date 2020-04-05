@@ -1,7 +1,7 @@
 import sys, os
 from settings import Settings
 from os import path
-
+import shelve
 
 class GameStats(object):
     """Track game statistics."""
@@ -10,19 +10,11 @@ class GameStats(object):
         """Initialize game statistics."""
         self.ai_settings = ai_settings
         self.reset_stats()
-        self.load_data()
         # Game active flag.
         self.game_active = True
+        self.high_score = 0
 
 
-    def load_data(self):
-        #load the high score
-        try:
-            self.high_score_file = open('/Users/richard/Desktop/PythonCrashCourse/chapter12/high_score.txt', 'r+')
-            self.high_score = str(self.high_score_file.read())
-            self.high_score.close()
-        except:
-            self.high_score = 0
 
     def reset_stats(self):
         """
@@ -30,3 +22,4 @@ class GameStats(object):
         """
         self.balls_left = self.ai_settings.ball_limit
         self.score = 0
+        self.level = 1

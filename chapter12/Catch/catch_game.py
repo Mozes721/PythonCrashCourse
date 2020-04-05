@@ -27,7 +27,7 @@ def run_game():
     catcher = Group()
     baller = Group()
 
-    #create an instance from store game statistics and create scoreboard
+    #create an instance from store game statistics and create scoreboards
     sb = Scoreboard(ai_settings, screen, stats)
 
 

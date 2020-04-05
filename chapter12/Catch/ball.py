@@ -9,7 +9,7 @@ class Ball(Sprite):
         self.screen = screen
 
         #Load image
-        self.image = pygame.image.load('Catch/ball_img.bmp')
+        self.image = pygame.image.load('chapter12/Catch/ball_img.bmp')
         self.rect = self.image.get_rect()
 
         self.screen_rect = screen.get_rect()
