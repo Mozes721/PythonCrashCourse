@@ -1,0 +1,1 @@
+<open file 'high_score.txt', mode 'w' at 0x7f70981c4390>

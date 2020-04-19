@@ -7,7 +7,7 @@ class Catcher(Sprite):
         super(Catcher, self).__init__()
         self.screen = screen
 
-        self.image = pygame.image.load('Catch/catcher_img.bmp')
+        self.image = pygame.image.load('chapter12/Catch/catcher_img.bmp')
         self.rect = self.image.get_rect()
         self.screen_rect = screen.get_rect()
 

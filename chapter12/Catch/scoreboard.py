@@ -17,6 +17,7 @@ class Scoreboard():
 
 
 
+
         self.prep_score()
         self.prep_high_score()
         self.prep_catchers()
@@ -48,6 +49,15 @@ class Scoreboard():
             ball.rect.x = 15 + ball_numbers * ball.rect.width
             ball.rect.y = 10
             self.balls.add(ball)
+
+    def prep_level(self):
+        """Turn the level into prep image"""
+        self.level_image = self.font.render(str(self.stats.level), True, self.text_color, self.ai_settings.bg_color)
+
+        #Position the level below the score.
+        self.level_rect = self.level_image.get_rect()
+        self.level_rect.right = self.score_rect.right
+        self.level_rect.top = self.score_rect.bottom + 10
 
 
     def show_score(self):
