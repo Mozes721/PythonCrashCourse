@@ -1,0 +1,18 @@
+{% extends 'Pizza/base.html' %}
+{% block content %}
+
+<h1>Toppings for {{pizza}}:</h1>
+
+<ul>
+  {% for topping in toppings %}
+  <li>
+    <p>{{topping|linebreaks}}</p>
+  </li>
+  {% empty %}
+  <li>
+    There is no entries for this topic yet.
+  </li>
+  {% endfor %}
+</ul>
+
+{% endblock content %}
